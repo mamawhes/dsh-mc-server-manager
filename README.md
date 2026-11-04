@@ -1,4 +1,4 @@
-# dsh-minecraft-manager
+# dsh-minecraft-manager · Minecraft 服务器管理
 
 [![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/mamawhes/dsh-mc-server-manager)
 
