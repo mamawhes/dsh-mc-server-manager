@@ -15,7 +15,7 @@ let captured = null
 globalThis.window = { __ModuleLoader__: { load: (mod) => { captured = mod } } }
 new Function('window', source)(globalThis.window)
 if (captured === null) throw new Error('module loader did not run')
-if (captured.id !== 'dsh-minecraft-manager') throw new Error(`bad id ${captured.id}`)
+if (captured.id !== 'dsh-mc-server-manager') throw new Error(`bad id ${captured.id}`)
 
 const reqMock = (id) => {
   if (id === 'react') return React

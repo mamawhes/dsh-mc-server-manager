@@ -1,4 +1,4 @@
-# dsh-minecraft-manager · Minecraft 服务器管理
+# dsh-mc-server-manager · Minecraft 服务器管理
 
 [![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/mamawhes/dsh-mc-server-manager)
 
@@ -9,13 +9,13 @@ DeepSeek Harness（DSH）插件：在本机管理 Minecraft **Paper** 服务器 
 ## 安装
 
 ```bash
-dsh plugin --profile web add dsh-minecraft-manager
+dsh plugin --profile web add dsh-mc-server-manager
 ```
 
 桌面版把 `web` 换成 `desktop`：
 
 ```bash
-dsh plugin --profile desktop add dsh-minecraft-manager
+dsh plugin --profile desktop add dsh-mc-server-manager
 ```
 
 安装后**重启 DSH 进程**。浏览器侧栏出现「MC 服务器」即生效；如果没有，刷新一次页面。
@@ -127,7 +127,7 @@ dsh plugin --profile desktop add github:mamawhes/dsh-mc-server-manager
 ## 开发
 
 - 宿主：`lib/index.js`（cordis 插件入口）→ `manager.js`（业务门面）→ `paper.js` / `modrinth.js` / `runtime.js` / `plugins.js` / `properties.js` / `backup.js`。
-- 浏览器：`lib/client.js` 是 classic script，必须保持 `window.__ModuleLoader__.load({ id: 'dsh-minecraft-manager', factory })` 格式，且不能内联 React（从 shell 的共享模块表 `require('react')`）。
+- 浏览器：`lib/client.js` 是 classic script，必须保持 `window.__ModuleLoader__.load({ id: 'dsh-mc-server-manager', factory })` 格式，且不能内联 React（从 shell 的共享模块表 `require('react')`）。
 - 测试脚本在 `research/tests/`：`host-test.mjs` 用伪 Java 进程跑通「创建 → Java 版本校验 → 启停 → 控制台 → gamerule → 备份/恢复 → API → 工具」；`client-smoke.mjs` 用 React SSR 渲染全部面板组件。
 
 ```bash

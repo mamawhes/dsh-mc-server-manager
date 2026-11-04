@@ -1,5 +1,5 @@
 {
-  "name": "dsh-minecraft-manager",
+  "name": "dsh-mc-server-manager",
   "version": "0.1.0",
   "description": "Minecraft (Paper) server manager for DeepSeek Harness: sidebar panel, process control, plugins, worlds and backups, server.properties and gamerules, plus agent tools.",
   "type": "module",

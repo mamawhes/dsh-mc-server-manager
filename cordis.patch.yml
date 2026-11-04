@@ -4,4 +4,4 @@
 # automatically through package.json's dsh.client declaration.
 - insert:
     - id: minecraft-manager
-      name: dsh-minecraft-manager
+      name: dsh-mc-server-manager
