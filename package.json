@@ -1,7 +1,6 @@
 {
   "name": "dsh-minecraft-manager",
   "version": "0.1.0",
-  "private": true,
   "description": "Minecraft (Paper) server manager for DeepSeek Harness: sidebar panel, process control, plugins, worlds and backups, server.properties and gamerules, plus agent tools.",
   "type": "module",
   "main": "lib/index.js",
@@ -13,14 +12,20 @@
       "default": "./lib/client.js"
     },
     "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
     "./package.json": "./package.json"
   },
   "files": [
     "lib",
+    "locale",
     "cordis.patch.yml",
-    "README.md"
+    "icon.svg",
+    "README.md",
+    "LICENSE"
   ],
   "dsh": {
+    "manifestVersion": 1,
     "bundle": {
       "patch": "./cordis.patch.yml"
     },
@@ -32,11 +37,28 @@
       ]
     }
   },
+  "icon": "icon.svg",
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.1.7-rc.1 <0.3.0-0"
+  },
   "keywords": [
     "dsh-plugin",
     "deepseek-harness",
     "minecraft",
-    "paper"
+    "minecraft-server",
+    "paper",
+    "papermc",
+    "server-manager"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamawhes/dsh-mc-server-manager.git"
+  },
+  "homepage": "https://github.com/mamawhes/dsh-mc-server-manager#readme",
+  "bugs": {
+    "url": "https://github.com/mamawhes/dsh-mc-server-manager/issues"
+  },
+  "author": "mamawhes",
   "license": "MIT"
 }

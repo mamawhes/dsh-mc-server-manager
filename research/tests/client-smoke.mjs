@@ -4,7 +4,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const here = dirname(fileURLToPath(import.meta.url))
-const pluginDir = join(here, '..', '..', 'dsh-minecraft-manager')
+const pluginDir = join(here, '..', '..')
 const reactDir = process.env.MCM_REACT_DIR ?? '/tmp/mcm-test'
 const require = createRequire(join(reactDir, 'package.json'))
 const React = require('react')

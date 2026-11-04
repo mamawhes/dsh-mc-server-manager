@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Minecraft 服务器管理",
+    "description": "管理本机的 Minecraft Paper 服务器：新建、启停、控制台、插件、世界备份、server.properties 与 gamerule，并提供 mc_* Agent 工具。"
+  }
+}

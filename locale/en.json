@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Minecraft Server Manager",
+    "description": "Manage local Minecraft Paper servers: create, start/stop, console, plugins, world backups, server.properties and gamerules, with mc_* agent tools."
+  }
+}

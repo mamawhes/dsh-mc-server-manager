@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Minecraft Server Manager">
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="#2f7d32"/>
+  <g fill="#7cc47f">
+    <rect x="12" y="16" width="40" height="7" rx="2"/>
+    <rect x="12" y="28" width="40" height="7" rx="2"/>
+    <rect x="12" y="40" width="40" height="7" rx="2"/>
+  </g>
+  <g fill="#0f3d12">
+    <rect x="16" y="18.5" width="3" height="3" rx="1"/>
+    <rect x="16" y="30.5" width="3" height="3" rx="1"/>
+    <rect x="16" y="42.5" width="3" height="3" rx="1"/>
+  </g>
+</svg>

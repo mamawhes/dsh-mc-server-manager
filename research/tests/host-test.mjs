@@ -6,7 +6,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
 const here = dirname(fileURLToPath(import.meta.url))
-const pluginDir = join(here, '..', '..', 'dsh-minecraft-manager')
+const pluginDir = join(here, '..', '..')
 const fakeJava = join(here, 'fake-java')
 const workDir = process.env.MCM_TEST_DIR ?? '/tmp/mcm-test'
 chmodSync(fakeJava, 0o755)
