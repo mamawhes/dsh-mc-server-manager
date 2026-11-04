@@ -1,0 +1,7 @@
+# Bundle patch for the Minecraft server manager.
+# One Loader row: the host half owns server processes, plugin downloads,
+# worlds/backups and the agent tools. The browser half is attached
+# automatically through package.json's dsh.client declaration.
+- insert:
+    - id: minecraft-manager
+      name: dsh-minecraft-manager

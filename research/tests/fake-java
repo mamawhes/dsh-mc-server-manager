@@ -1,0 +1,55 @@
+#!/bin/sh
+# Fake Paper server used by the manager host tests: speaks enough console
+# protocol to exercise start/stop, list, gamerule, save and console capture.
+STATE="${MC_FAKE_STATE:-/tmp/mcm-test/fake-state}"
+mkdir -p "$STATE"
+[ -f "$STATE/keepInventory" ] || echo "true" > "$STATE/keepInventory"
+[ -f "$STATE/randomTickSpeed" ] || echo "3" > "$STATE/randomTickSpeed"
+[ -f "$STATE/doDaylightCycle" ] || echo "false" > "$STATE/doDaylightCycle"
+
+if [ "$1" = "-version" ]; then
+  echo 'openjdk version "25.0.5" 2026-04-21'
+  echo 'OpenJDK Runtime Environment (build 25.0.5+8)'
+  exit 0
+fi
+
+echo "[00:00:00] [Server thread/INFO]: Starting minecraft server version 26.1.2"
+echo "[00:00:00] [Server thread/INFO]: Loading properties"
+echo "[00:00:00] [Server thread/INFO]: Preparing level \"world\""
+sleep 0.1
+echo "[00:00:00] [Server thread/INFO]: Done (0.412s)! For help, type \"help\""
+
+while IFS= read -r line; do
+  case "$line" in
+    stop)
+      echo "[00:00:00] [Server thread/INFO]: Stopping the server"
+      exit 0
+      ;;
+    list)
+      echo "[00:00:00] [Server thread/INFO]: There are 1 of a max of 20 players online: Steve"
+      ;;
+    "save-all flush")
+      echo "[00:00:00] [Server thread/INFO]: Saved the game"
+      ;;
+    save-off)
+      echo "[00:00:00] [Server thread/INFO]: Automatic saving is now disabled"
+      ;;
+    save-on)
+      echo "[00:00:00] [Server thread/INFO]: Automatic saving is now enabled"
+      ;;
+    "gamerule "*" "*)
+      rule=$(echo "$line" | awk '{print $2}')
+      value=$(echo "$line" | awk '{print $3}')
+      echo "$value" > "$STATE/$rule"
+      echo "[00:00:00] [Server thread/INFO]: Gamerule $rule is now set to: $value"
+      ;;
+    "gamerule "*)
+      rule=$(echo "$line" | awk '{print $2}')
+      if [ -f "$STATE/$rule" ]; then value=$(cat "$STATE/$rule"); else value="true"; fi
+      echo "[00:00:00] [Server thread/INFO]: Gamerule $rule is currently set to: $value"
+      ;;
+    *)
+      echo "[00:00:00] [Server thread/INFO]: Unknown command: $line"
+      ;;
+  esac
+done
